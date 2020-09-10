@@ -4,8 +4,10 @@ import com.cuifei.aop.Calculator;
 import com.cuifei.aop.CalculatorProxy;
 import com.cuifei.aop.MyCalculator;
 import com.cuifei.aop.Person;
+import com.cuifei.aop.springbeanlife.Student;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
@@ -29,14 +31,27 @@ public class AOPtest {
 
     @Test
     public void test1(){
+       /* AnnotationConfigApplicationContext aca = new AnnotationConfigApplicationContext();*/
         ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("AOP.xml");
         Calculator bean = ac.getBean(Calculator.class);
-       // Integer add = bean.add(1, 1);
-        Integer sub = bean.sub(1, 0);
+        Integer add = bean.add(1, 1);
+       // Integer sub = bean.sub(1, 0);
 
-        System.out.println(sub);
+
+        System.out.println(add);
     }
 
+
+
+    @Test
+    public void test2(){
+        /* AnnotationConfigApplicationContext aca = new AnnotationConfigApplicationContext();*/
+        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("springBeanLife.xml");
+        Student bean = ac.getBean(Student.class);
+        ac.close();
+
+
+    }
 
 
 }

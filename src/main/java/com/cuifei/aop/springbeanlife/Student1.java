@@ -17,7 +17,7 @@ public class Student1 implements BeanFactoryAware, BeanNameAware,
 
     public Student1(){
 
-        System.out.println("student 构造方法执行");
+        System.out.println("student1 构造方法执行");
 
     }
 
@@ -25,13 +25,13 @@ public class Student1 implements BeanFactoryAware, BeanNameAware,
 
     public void init(){
 
-        System.out.println("student inti方法执行");
+        System.out.println("student1 inti方法执行");
     }
 
 
     public void studentDestroy(){
 
-        System.out.println("student destroy方法执行");
+        System.out.println("student1 destroy方法执行");
     }
 
 
@@ -39,27 +39,27 @@ public class Student1 implements BeanFactoryAware, BeanNameAware,
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        System.out.println("设置BeanFactory。。。。。。。。。。。。。。");
+        System.out.println("student1 设置BeanFactory。。。。。。。。。。。。。。");
         this.beanFactory=beanFactory;
     }
 
     @Override
     public void setBeanName(String name) {
-        System.out.println("设置beanName。。。。。。。。。。。。。。");
+        System.out.println("student1 设置beanName。。。。。。。。。。。。。。");
         this.beanName = name;
     }
 
     @Override
     public void destroy() throws Exception {
 
-        System.out.println("DisposableBean。。。。。。。。。。。。的destroy 方法进行调用");
+        System.out.println("student1 DisposableBean。。。。。。。。。。。。的destroy 方法进行调用");
 
 
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("InitializingBean。。。。。。。。。。。。的afterPropertiesSet 方法进行调用");
+        System.out.println("student1 InitializingBean。。。。。。。。。。。。的afterPropertiesSet 方法进行调用");
     }
 
 

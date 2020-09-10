@@ -2,8 +2,10 @@ package com.cuifei.aop.springbeanlife;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
+import org.springframework.context.EmbeddedValueResolverAware;
+import org.springframework.util.StringValueResolver;
 
-public class Student implements BeanFactoryAware, BeanNameAware,
+public class Student implements BeanFactoryAware, BeanNameAware,BeanClassLoaderAware, EmbeddedValueResolverAware,
         InitializingBean, DisposableBean {
 
     private String id;
@@ -77,5 +79,15 @@ public class Student implements BeanFactoryAware, BeanNameAware,
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public void setBeanClassLoader(ClassLoader classLoader) {
+        System.out.println("设置classLoader。。。。。。。。。。。。。。");
+    }
+
+    @Override
+    public void setEmbeddedValueResolver(StringValueResolver resolver) {
+        System.out.println("设置StringValueResolver。。。。。。。。。。。。。。");
     }
 }

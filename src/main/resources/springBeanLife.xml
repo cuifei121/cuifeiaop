@@ -11,6 +11,9 @@
 
      <bean id="myBeanFactoryPostProcessor" class="com.cuifei.aop.springbeanlife.MyBeanFactoryPostProcessor"></bean>
 
+
+
+
      <bean id="student" class="com.cuifei.aop.springbeanlife.Student" init-method="init" destroy-method="studentDestroy"></bean>
      <bean id="student1" class="com.cuifei.aop.springbeanlife.Student1" init-method="init" destroy-method="studentDestroy"></bean>
 </beans>

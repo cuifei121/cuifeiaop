@@ -5,6 +5,7 @@ import com.cuifei.aop.CalculatorProxy;
 import com.cuifei.aop.MyCalculator;
 import com.cuifei.aop.Person;
 import com.cuifei.aop.springbeanlife.Student;
+import com.cuifei.aop.springbeanlife.Student1;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -46,9 +47,13 @@ public class AOPtest {
     @Test
     public void test2(){
         /* AnnotationConfigApplicationContext aca = new AnnotationConfigApplicationContext();*/
-        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("springBeanLife.xml");
-        Student bean = ac.getBean(Student.class);
-        ac.close();
+        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("springBeanLife.xml","AOP.xml");
+        Student1 bean = (Student1) ac.getBean("student1");
+        System.out.println(bean.getId());
+
+        Person bean1 = ac.getBean(Person.class);
+        System.out.println(bean1.getId());
+        
 
 
     }

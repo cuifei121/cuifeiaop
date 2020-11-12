@@ -4,6 +4,7 @@ package com.cuifei.aop;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.*;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -44,6 +45,11 @@ public class LogUtil {
         Signature signature = joinPoint.getSignature();
         System.out.println("AfterThrowing addAOP  方法为---------------->"+signature);
 
+    }
+
+
+    public static void main(String[] args) {
+        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("AOP.xml");
     }
 
 }

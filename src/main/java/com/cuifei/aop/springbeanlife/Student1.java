@@ -64,10 +64,13 @@ public class Student1 implements BeanFactoryAware, BeanNameAware,
 
 
     public String getId() {
+        System.out.println("get 方法执行");
         return id;
     }
 
     public void setId(String id) {
+        System.out.println("set 方法执行");
+
         this.id = id;
     }
 

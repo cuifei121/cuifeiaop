@@ -14,6 +14,12 @@
 
 
 
-     <bean id="student" class="com.cuifei.aop.springbeanlife.Student" init-method="init" destroy-method="studentDestroy"></bean>
-     <bean id="student1" class="com.cuifei.aop.springbeanlife.Student1" init-method="init" destroy-method="studentDestroy"></bean>
+     <bean id="student" class="com.cuifei.aop.springbeanlife.Student" init-method="init" destroy-method="studentDestroy">
+          <property name="name" value="12"></property>
+          <property name="id" value="1"></property>
+     </bean>
+     <bean id="student1" class="com.cuifei.aop.springbeanlife.Student1" init-method="init" destroy-method="studentDestroy">
+          <property name="name" value="12"></property>
+          <property name="id" value="1"></property>
+     </bean>
 </beans>
